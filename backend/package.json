@@ -15,6 +15,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
+    "login-express-next": "file:",
     "pg": "^8.13.1",
     "sqlite3": "^5.1.7"
   }
