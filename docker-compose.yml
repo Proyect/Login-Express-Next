@@ -11,6 +11,9 @@ services:
       - ./backend:/app
     depends_on:
       - db
+    environment:
+      - DATABASE_URL=postgres://user:password@db:5432/mydb
+      - JWT_SECRET=1234567sdfsdfsdf
 
   frontend:
     build: ./frontend

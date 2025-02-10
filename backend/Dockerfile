@@ -1,5 +1,5 @@
-FROM node:18-alpine
-WORKDIR /app
+FROM node:22
+WORKDIR usr/src/app
 
 # necesary files
 COPY package.json package-lock.json ./
