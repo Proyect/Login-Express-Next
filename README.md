@@ -21,7 +21,8 @@ cd .\backend\
 npm install express bcryptjs jsonwebtoken cors dotenv pg
 cd ..
 
-##Levantar docker
+## up docker
 docker-compose up --build
+
 # Login-Express-Next
 Login and seccion user
