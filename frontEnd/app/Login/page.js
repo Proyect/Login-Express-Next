@@ -1,8 +1,10 @@
+'use client';
+
 import { useRouter } from "next/router";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-export function Login() {
+export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();

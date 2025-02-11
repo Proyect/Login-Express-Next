@@ -2,10 +2,8 @@ const dotenv = require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const {Client} = require('pg');
-const bcrypt = require("bcrypt.js");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
-dotenv.config();
 
 const app = express();
 
