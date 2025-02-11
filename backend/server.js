@@ -5,15 +5,34 @@ const {Client} = require('pg');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+const sqlite3 = require('sqlite3').verbose();
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-const client = new Client({
+/*const client = new Client({
     connectionString: process.env.DATABASE_URL,
 });
-client.connect();
+client.connect((err) => {
+    if (err) {
+      console.error('Error al conectar a PostgreSQL:', err);
+    } else {
+      console.log('Conectado a PostgreSQL');
+    }
+  });
+*/
+
+// Conexión a SQLite
+const client = new sqlite3.Database('db.sqlite', (err) => {
+    if (err) {
+      console.error('Error al conectar a SQLite:', err);
+    } else {
+      console.log('Conectado a SQLite');
+    }
+  });
+  client.connect();
 
 const isValidEmail = (email) => {
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
