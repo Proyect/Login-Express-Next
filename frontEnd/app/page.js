@@ -8,10 +8,10 @@
         <h1 className="text-3xl font-bold mb-6">Welcome to the Auth System</h1>
         <p className="text-lg mb-4">Secure authentication with Next.js & Express.js</p>
         <div className="space-x-4">
-          <Link href="Login" className="px-4 py-2 bg-blue-500 text-white rounded shadow hover:bg-blue-600">
+          <Link href="Login" className="btn btn-outline-primary">
             Login
           </Link> - 
-          <Link href="Register" className="px-4 py-2 bg-green-500 text-white rounded shadow hover:bg-green-600">
+          <Link href="Register" className="btn btn-outline-primary">
             Register
           </Link>
         </div>

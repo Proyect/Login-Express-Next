@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -13,7 +13,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/register", { name, email, password });
+      await axios.post("http://127.0.0.1:5000/api/register", { name, email, password });
       router.push("/login");
     } catch (err) {
       alert("Registration failed");
@@ -45,7 +45,7 @@ export default function Register() {
           value={password} 
           onChange={(e) => setPassword(e.target.value)} 
         />
-        <button type="submit" className="w-full bg-green-500 text-white py-2 rounded">Register</button>
+        <button type="submit" className="btn btn-outline-primary rounded">Register</button>
       </form>
     </div>
   );

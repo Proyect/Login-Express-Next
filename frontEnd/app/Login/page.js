@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -14,7 +14,7 @@ export default function Login() {
       try {
         const res = await axios.post("/api/login", { email, password });
         localStorage.setItem("token", res.data.token);
-        router.push("/dashboard");
+        router.push("/");
       } catch (err) {
         alert("Login failed");
       }
@@ -38,7 +38,7 @@ export default function Login() {
             value={password} 
             onChange={(e) => setPassword(e.target.value)} 
           />
-          <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">Login</button>
+          <button type="submit" className="btn btn-outline-primary rounded">Login</button>
         </form>
       </div>
     );
