@@ -48,8 +48,11 @@ app.post('/api/register', async (req, res) => {
         if (row) {
             return res.status(400).json({ message: 'Email already registered' });
         }
+        else{
+            return express.json(row);
+        }
 
-        bcrypt.hash(password, 8, (err, hashedPassword) => { // Callback para bcrypt.hash
+        bcrypt.hash(password, 10, (err, hashedPassword) => { // Callback para bcrypt.hash
             if (err) {
                 console.error(err);
                 return res.status(500).json({ message: 'Error hashing password' });
@@ -76,7 +79,7 @@ app.post('/api/register', async (req, res) => {
 app.post('/api/login', async (req, res) => {
     const { email, password } = req.body;
 
-    db.get('SELECT * FROM users WHERE email = ?', [email], (err, row) => { // Usa db.get
+    db.get('SELECT * FROM users WHERE email = ?', [email], (err, row) => { 
         if (err) {
             console.error(err);
             return res.status(500).json({ message: 'Error during login' });
@@ -102,7 +105,8 @@ app.get('/api/users', async (req, res) => {
             console.error(err);
             return res.status(500).json({ message: 'Error getting users' });
         }
-        res.json(rows);
+        res.json(rows); console.log(rows);
+        
     });
 });
 

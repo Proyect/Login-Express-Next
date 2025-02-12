@@ -12,9 +12,10 @@ export default function Login() {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const res = await axios.post("/api/login", { email, password });
+        const res = await axios.post("http://127.0.0.1:5000/api/login", { email, password });
         localStorage.setItem("token", res.data.token);
         router.push("/");
+        alert("Correct Login");
       } catch (err) {
         alert("Login failed");
       }
@@ -30,6 +31,7 @@ export default function Login() {
             className="w-full p-2 border rounded mb-3" 
             value={email} 
             onChange={(e) => setEmail(e.target.value)} 
+            Required 
           />
           <input 
             type="password" 
@@ -37,6 +39,7 @@ export default function Login() {
             className="w-full p-2 border rounded mb-3" 
             value={password} 
             onChange={(e) => setPassword(e.target.value)} 
+            Required 
           />
           <button type="submit" className="btn btn-outline-primary rounded">Login</button>
         </form>

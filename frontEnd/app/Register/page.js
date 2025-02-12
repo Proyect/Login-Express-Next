@@ -14,7 +14,8 @@ export default function Register() {
     e.preventDefault();
     try {
       await axios.post("http://127.0.0.1:5000/api/register", { name, email, password });
-      router.push("/login");
+      router.push("/Login");
+      alert("Registracion Done!!!")
     } catch (err) {
       alert("Registration failed");
     }
@@ -37,6 +38,7 @@ export default function Register() {
           className="w-full p-2 border rounded mb-3" 
           value={email} 
           onChange={(e) => setEmail(e.target.value)} 
+          Required 
         />
         <input 
           type="password" 
@@ -44,6 +46,7 @@ export default function Register() {
           className="w-full p-2 border rounded mb-3" 
           value={password} 
           onChange={(e) => setPassword(e.target.value)} 
+          Required 
         />
         <button type="submit" className="btn btn-outline-primary rounded">Register</button>
       </form>
