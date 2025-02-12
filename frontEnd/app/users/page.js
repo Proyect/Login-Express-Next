@@ -26,18 +26,18 @@ export default function Users() {
         <div className="w-full max-w-2xl bg-white p-6 rounded shadow-md">
           <table className="table">
             <thead>
-              <tr className="bg-gray-200">
-                <th className="border p-2">ID</th>
+              <tr className="bg-gray-200">                
                 <th className="border p-2">Name</th>
                 <th className="border p-2">Email</th>
+                <th className="border p-2">Options</th>
               </tr>
             </thead>
             <tbody>
               {users.map((user) => (
-                <tr key={user.id} className="border">
-                  <td className="border p-2"  scope="row">{user.id}</td>
+                <tr key={user.id} className="border">                 
                   <td className="border p-2" scope="row">{user.name}</td>
                   <td className="border p-2" scope="row">{user.email}</td>
+                  <td  className="border p-2" scope="row"> Update Delete Password</td>
                 </tr>
               ))}
             </tbody>
