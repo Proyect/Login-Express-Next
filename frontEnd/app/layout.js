@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
         </head>
         <body className='bg-blue-100'>
         <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-          <Nav />
+          <Nav/>
           {children}
         </div>
         </body>       

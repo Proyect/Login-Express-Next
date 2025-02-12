@@ -2,5 +2,7 @@
 /frontend/node_modules/
 /backend/node_modules/
 
+*.pack.gz
 *.gz
 *.old
+*.json
