@@ -102,7 +102,8 @@ app.get('/api/users', async (req, res) => {
             console.error(err);
             return res.status(500).json({ message: 'Error getting users' });
         }
-        res.json(rows);
+        res.json(rows); console.log(rows);
+        
     });
 });
 

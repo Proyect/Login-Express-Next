@@ -3,22 +3,21 @@ import Link from 'next/link';
 
 function Nav() {
     return (
-      <nav className='nav justify-content-end'>        
-          <ul className='ml-10 hidden items-center gap-8 lg:flex'>
+      <nav className=''>        
+          <ul className='nav justify-content-end'>
             <li className='nav-item'>
-              <Link href="/">Inicio</Link>
+              <Link className='nav-link' href="/">Inicio</Link>
             </li>
             <li className='nav-item'>
-              <Link href="Login">Login</Link>
+              <Link className='nav-link' href="Login">Login</Link>
             </li>
             <li className='nav-item'>
-              <Link href="Register">Register</Link>
+              <Link className='nav-link' href="Register">Register</Link>
             </li>
             <li className='nav-item'>
-              <Link href="User">Users</Link>
+              <Link className='nav-link' href="Users">Users</Link>
             </li>
-          </ul>      
-        
+          </ul>         
       </nav>
     );
   }

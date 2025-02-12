@@ -15,6 +15,7 @@ export default function Register() {
     try {
       await axios.post("http://127.0.0.1:5000/api/register", { name, email, password });
       router.push("/login");
+      alert("Registracion Done!!!")
     } catch (err) {
       alert("Registration failed");
     }
