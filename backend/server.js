@@ -22,6 +22,7 @@ client.connect((err) => {
       console.log('Conectado a PostgreSQL');
     }
   });
+  client.connect();
 */
 
 // Conexión a SQLite
@@ -32,8 +33,7 @@ const client = new sqlite3.Database('db.sqlite', (err) => {
       console.log('Conectado a SQLite');
     }
   });
-  client.connect();
-
+  
 const isValidEmail = (email) => {
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return regex.test(email);
