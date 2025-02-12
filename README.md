@@ -8,7 +8,7 @@
 ## Instalación y Ejecución en Local
 
 ### Frontend
-1. Ir a la carpeta del frontend: e instalar las dependencias con los siguientes codigos
+#1. Ir a la carpeta del frontend: e instalar las dependencias con los siguientes codigos
 
 cd .\frontend\
 npm install
