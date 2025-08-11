@@ -6,6 +6,8 @@ const jwt = require("jsonwebtoken");
 const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
+const app = require('./src/app');
+
 
 app.use(cors());
 app.use(express.json());
@@ -116,3 +118,5 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));
+
+module.exports = app;
