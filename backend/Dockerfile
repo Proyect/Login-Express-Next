@@ -1,14 +1,18 @@
-FROM node:22
-WORKDIR usr/src/app
+FROM node:18-alpine
 
-# necesary files
-COPY package.json package-lock.json ./
-RUN npm install
+WORKDIR /usr/src/app
 
+# Copiar archivos de dependencias
+COPY package*.json ./
+
+# Instalar dependencias
+RUN npm ci
+
+# Copiar código fuente
 COPY . .
 
-#  http://localhost:5000
+# Exponer puerto
 EXPOSE 5000
 
-# Comando de inicio
-CMD ["node", "server.js"]
+# Comando por defecto
+CMD ["npm", "start"]
